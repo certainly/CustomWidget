@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="UtilitiesWidget" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KdU-cq-hMX">
+                                <rect key="frame" x="10" y="-25" width="300" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iID-DP-5IQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="100"/>
+                                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Timer">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="timerClicked:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="nqZ-Kr-XeN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFi-SS-IFV">
+                                        <rect key="frame" x="103.5" y="0.0" width="93" height="100"/>
+                                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Home">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goHomeClicked:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="M6G-uR-JEr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmw-4G-YXC">
+                                        <rect key="frame" x="206.5" y="0.0" width="93.5" height="100"/>
+                                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Podcast">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="oAO-Ry-TAb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Mz6-or-HGD"/>
+                                    <constraint firstAttribute="height" constant="100" id="Woj-b6-64V"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KdU-cq-hMX" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="GfL-EC-vDN"/>
+                            <constraint firstItem="KdU-cq-hMX" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="dVl-Dt-ByL"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="50"/>
+                    <connections>
+                        <outlet property="homeBtn" destination="GFi-SS-IFV" id="nrz-KL-KN6"/>
+                        <outlet property="timeText" destination="iID-DP-5IQ" id="79K-6A-DHp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33.75" y="39.08450704225352"/>
+        </scene>
+    </scenes>
+</document>
