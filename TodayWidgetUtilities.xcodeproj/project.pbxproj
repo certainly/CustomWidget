@@ -474,6 +474,7 @@
 				5C3B57B71E70EE5300CE3BAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C3B57CA1E70EE8E00CE3BAE /* Build configuration list for PBXNativeTarget "UtilitiesWidget" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +483,7 @@
 				5C3B57CC1E70EE8E00CE3BAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

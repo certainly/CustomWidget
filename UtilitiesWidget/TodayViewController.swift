@@ -53,7 +53,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
             print("begin play111")
             timer.invalidate()
             //            prepareSound()
-            print("begin play343243 \(soundPlayer)")
+            print("begin play343243 \(String(describing: soundPlayer))")
             playSound()
             print("begin play333")
         }

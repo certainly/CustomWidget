@@ -123,14 +123,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 
                 if subview.description.contains("MPVolumeSlider") {
                     let slider = subview as? UISlider
-                    print("ctl slider: \(slider?.value)")
+                    print("ctl slider: \(String(describing: slider?.value))")
                     //                        log("\(slider?.value)")
                     
                     if let xx = slider?.value{
                         slider?.value = vol
                          originVol = xx
                     }
-                    print("ctl slider2: \(slider?.value)")
+                    print("ctl slider2: \(String(describing: slider?.value))")
                 }
             }
         }
@@ -138,7 +138,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func playSound() {
-        print("ctl play \(soundPlayer)")
+        print("ctl play \(String(describing: soundPlayer))")
         soundPlayer?.play()
     }
 
