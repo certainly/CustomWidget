@@ -13,18 +13,11 @@ import AVFoundation
 import MediaPlayer
 
 class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate {
-    @IBOutlet weak var timeText: UIButton!
+
     //     var backgroundTaskIdentifier: UIBackgroundTaskIdentifier?
     @IBAction func timerClicked(_ sender: UIButton) {
         openURL("two")
-//        counter = counterInital
-//        timer.invalidate()
-//        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
-//        DispatchQueue.global(qos: .background).async {
-//            // start the timer
-//            self.prepareSound()
-//            print("begin async33")
-//        }
+
         
         
     }
@@ -41,45 +34,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
   
     }
     
-    // called every time interval from the timer
-    func timerAction() {
-        //        return()
-        print("begin play1")
-        counter -= 1
-        print("begin play2")
-        timeText.setTitle("\(counter)", for: UIControlState.normal)
-        print("begin play000")
-        if counter <= 0 {
-            print("begin play111")
-            timer.invalidate()
-            //            prepareSound()
-            print("begin play343243 \(String(describing: soundPlayer))")
-            playSound()
-            print("begin play333")
-        }
-    }
+
     
-    func prepareSound() {
-        guard let audioFileUrl = Bundle.main.url(forResource: "clair",
-                                                 withExtension: "mp3") else {
-                                                    print("ctl: nofile")
-                                                    return
-        }
-        
-        do {
-            print("begin play")
-            soundPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
-            soundPlayer?.prepareToPlay()
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.mixWithOthers)
-            
-        } catch {
-            print("Sound player not available: \(error)")
-        }
-    }
-    
-    func playSound() {
-        soundPlayer?.play()
-    }
+
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
@@ -91,8 +48,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeBtn.layer.masksToBounds = true
-        homeBtn.layer.cornerRadius = homeBtn.frame.width/2
+//        homeBtn.layer.masksToBounds = true
+//        homeBtn.layer.cornerRadius = homeBtn.frame.width/2
         // Do any additional setup after loading the view from its nib.
         //        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         //        locationManager.delegate = self
@@ -106,11 +63,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         //        self.preferredContentSize = currenSize
         updateWidget()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
@@ -122,14 +75,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         completionHandler(NCUpdateResult.newData)
     }
     
-    //    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    //        currentLocation = locations[0]
-    //    }
-    //
-    //    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    //        print(error.localizedDescription)
-    //    }
-    
+
     @IBAction func openApp(_ sender: UIButton) {
         //        let url: URL? = URL(string: "location:")!
         let url: URL? = URL(string: "pcast:")!
@@ -138,30 +84,33 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
             self.extensionContext!.open(appurl){
                 success in
                 print("ctl suc \(success)")
-                //                MPRemoteCommandCenter.shared().playCommand
-                //                    UIApplication.shared.beginReceivingRemoteControlEvents()
-                //                let info = MPNowPlayingInfoCenter.default().debugDescription
-                //                let info2 = MPNowPlayingInfoCenter.default().description
-                
-                //                print("ctl info \(info) | \(info2)")
+
             }
         }
     }
     func updateWidget()
     {
-        //        if currentLocation != nil {
-        //            let latitudeText = String(format: "Lat: %.4f",
-        //                                      currentLocation!.coordinate.latitude)
-        //            
-        //            let longitudeText = String(format: "Lon: %.4f",
-        //                                       currentLocation!.coordinate.longitude)
-        //            
-        //            latitudeLabel.text = latitudeText
-        //            longitudeLabel.text = longitudeText
-        //        }
+        if #available(iOSApplicationExtension 10.0, *) { // Xcode would suggest you implement this.
+            extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        } else {
+            // Fallback on earlier versions
+        }
+
     }
+    
+    @available(iOSApplicationExtension 10.0, *)
+    func widgetActiveDisplayModeDidChange(activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if activeDisplayMode == .expanded {
+             preferredContentSize = maxSize
+//            preferredContentSize = CGSize(width: 0.0, height: 800.0)
+        } else if activeDisplayMode == .compact {
+            preferredContentSize = maxSize
+        }
+    }
+    
+    
     @IBAction func goHomeClicked(_ sender: UIButton) {
         openURL("goHome")
-//        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+
     }
 }

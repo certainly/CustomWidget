@@ -68,7 +68,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         prepareSound()
         originBright = UIScreen.main.brightness
-        UIScreen.main.brightness = 0.2
+        UIScreen.main.brightness = 0.1
 
     }
     
