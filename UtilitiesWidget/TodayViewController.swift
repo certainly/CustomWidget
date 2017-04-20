@@ -91,7 +91,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 //         preferredContentSize = CGSize(width: 0.0, height: 300.0)
         if activeDisplayMode == .expanded {
             //             preferredContentSize = maxSize
-            preferredContentSize = CGSize(width: 0.0, height: 250.0)
+            preferredContentSize = CGSize(width: 0.0, height: 320.0)
             print("preferredContentSize = \(preferredContentSize)")
         } else if activeDisplayMode == .compact {
 //            preferredContentSize = CGSize(width: 0.0, height: 300.0)
