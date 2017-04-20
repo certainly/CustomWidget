@@ -75,11 +75,13 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         completionHandler(NCUpdateResult.newData)
     }
     
+    @IBOutlet var btns: [UIButton]!
 
     @IBAction func openApp(_ sender: UIButton) {
         //        let url: URL? = URL(string: "location:")!
-        let url: URL? = URL(string: "pcast:")!
-        
+//        let url: URL? = URL(string: "pcast:")!
+        print("se \(sender.currentTitle)")
+         let url: URL? = URL(string: sender.currentTitle!)!
         if let appurl = url {
             self.extensionContext!.open(appurl){
                 success in
@@ -90,10 +92,18 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
     }
     func updateWidget()
     {
+
         if #available(iOSApplicationExtension 10.0, *) { // Xcode would suggest you implement this.
-            extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+            extensionContext?.widgetLargestAvailableDisplayMode = .compact
         } else {
             // Fallback on earlier versions
+        }
+        for button in btns {
+            //            button.contentHorizontalAlignment = .fill
+            //            button.contentVerticalAlignment = .fill
+            //            button.contentMode = .scaleAspectFit
+//            print("ctl dd\(button)")
+            button.imageView?.contentMode = .scaleAspectFit
         }
 
     }
