@@ -19,35 +19,35 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ao6-6s-KQl">
-                                <rect key="frame" x="30" y="10" width="340" height="280"/>
+                                <rect key="frame" x="30" y="10" width="340" height="180"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KdU-cq-hMX">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="135"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="53.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iID-DP-5IQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="135"/>
-                                                <state key="normal" title="Timer" image="alarm">
+                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="53.5"/>
+                                                <state key="normal" title="todayctl://two" image="alarm">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="timerClicked:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="nqZ-Kr-XeN"/>
+                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Q8y-Yd-UO8"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFi-SS-IFV">
-                                                <rect key="frame" x="116.5" y="0.0" width="107" height="135"/>
-                                                <state key="normal" title="Home" image="home">
+                                                <rect key="frame" x="116.5" y="0.0" width="107" height="53.5"/>
+                                                <state key="normal" title="todayctl://goHome" image="home">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="goHomeClicked:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="M6G-uR-JEr"/>
+                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="haT-R0-U4N"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmw-4G-YXC">
-                                                <rect key="frame" x="233.5" y="0.0" width="106.5" height="135"/>
+                                                <rect key="frame" x="233.5" y="0.0" width="106.5" height="53.5"/>
                                                 <state key="normal" title="pcast:" image="podcast">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -58,10 +58,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uXE-Zj-99S">
-                                        <rect key="frame" x="0.0" y="145" width="340" height="135"/>
+                                        <rect key="frame" x="0.0" y="63.5" width="340" height="53"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inP-pE-qlK">
-                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="135"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="53"/>
                                                 <state key="normal" title="App-Prefs:" image="setting">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -70,7 +70,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh6-XF-rdD">
-                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="135"/>
+                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="53"/>
                                                 <state key="normal" title="googlechrome://" image="chrome">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -79,7 +79,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAM-Fa-fb7">
-                                                <rect key="frame" x="175" y="0.0" width="77.5" height="135"/>
+                                                <rect key="frame" x="175" y="0.0" width="77.5" height="53"/>
                                                 <state key="normal" title="weixin://" image="wechat">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -88,12 +88,53 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QE-lb-9t8">
-                                                <rect key="frame" x="262.5" y="0.0" width="77.5" height="135"/>
-                                                <state key="normal" title="ibooks://" image="other">
+                                                <rect key="frame" x="262.5" y="0.0" width="77.5" height="53"/>
+                                                <state key="normal" title="x-com-amrc://" image="other">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="hau-tf-5ab"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mHp-OI-gHr">
+                                        <rect key="frame" x="0.0" y="126.5" width="340" height="53.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34N-Qs-l3k">
+                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="53.5"/>
+                                                <state key="normal" title="x-web-search://" image="safari">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="0DE-A7-n8A"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmM-tw-RBZ">
+                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="53.5"/>
+                                                <state key="normal" title="ibooks://" image="ibooks">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="R8y-bj-7ZR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-cb-P0w">
+                                                <rect key="frame" x="175" y="0.0" width="77.5" height="53.5"/>
+                                                <state key="normal" title="orpheus://" image="music">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="96p-Hr-6Xh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLq-by-vQI">
+                                                <rect key="frame" x="262.5" y="0.0" width="77.5" height="53.5"/>
+                                                <state key="normal" title="alipay://" image="alipay">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="JSh-tH-tme"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -113,9 +154,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="300"/>
+                    <size key="freeformSize" width="400" height="200"/>
                     <connections>
-                        <outlet property="homeBtn" destination="GFi-SS-IFV" id="nrz-KL-KN6"/>
                         <outletCollection property="btns" destination="GFi-SS-IFV" collectionClass="NSMutableArray" id="xde-Pi-cXR"/>
                         <outletCollection property="btns" destination="nmw-4G-YXC" collectionClass="NSMutableArray" id="Cxp-l2-FT3"/>
                         <outletCollection property="btns" destination="iID-DP-5IQ" collectionClass="NSMutableArray" id="6wA-uW-i8i"/>
@@ -123,6 +163,9 @@
                         <outletCollection property="btns" destination="qAM-Fa-fb7" collectionClass="NSMutableArray" id="5Ht-fF-6Vh"/>
                         <outletCollection property="btns" destination="1QE-lb-9t8" collectionClass="NSMutableArray" id="86a-cg-dcj"/>
                         <outletCollection property="btns" destination="mh6-XF-rdD" collectionClass="NSMutableArray" id="sAj-ye-cYw"/>
+                        <outletCollection property="btns" destination="34N-Qs-l3k" collectionClass="NSMutableArray" id="WWK-qf-DNv"/>
+                        <outletCollection property="btns" destination="UmM-tw-RBZ" collectionClass="NSMutableArray" id="98z-Hq-lzH"/>
+                        <outletCollection property="btns" destination="dxW-cb-P0w" collectionClass="NSMutableArray" id="m26-8J-M2w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,10 +175,14 @@
     </scenes>
     <resources>
         <image name="alarm" width="512" height="512"/>
+        <image name="alipay" width="512" height="512"/>
         <image name="chrome" width="128" height="128"/>
         <image name="home" width="512" height="512"/>
+        <image name="ibooks" width="512" height="402"/>
+        <image name="music" width="512" height="512"/>
         <image name="other" width="128" height="128"/>
         <image name="podcast" width="128" height="128"/>
+        <image name="safari" width="512" height="512"/>
         <image name="setting" width="512" height="512"/>
         <image name="wechat" width="512" height="512"/>
     </resources>

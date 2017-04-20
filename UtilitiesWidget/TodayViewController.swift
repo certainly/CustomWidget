@@ -8,43 +8,16 @@
 
 import UIKit
 import NotificationCenter
-import CoreLocation
-import AVFoundation
-import MediaPlayer
 
-class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate {
 
-    //     var backgroundTaskIdentifier: UIBackgroundTaskIdentifier?
-    @IBAction func timerClicked(_ sender: UIButton) {
-        openURL("two")
+class TodayViewController: UIViewController, NCWidgetProviding {
 
-        
-        
-    }
-    @IBOutlet weak var homeBtn: UIButton!
-    
-    func openURL(_ msg: String) {
-        let path = "todayctl://" + msg
-        let url: URL? = URL(string: path)!
-        
-        if let appurl = url {
-            self.extensionContext!.open(appurl,
-                                        completionHandler: nil)
-        }
-  
-    }
-    
+
 
     
 
-    
-    var locationManager = CLLocationManager()
-    var currentLocation: CLLocation?
-    
-    let counterInital = 5
-    var counter = 0
-    var timer = Timer()
-    var soundPlayer: AVAudioPlayer?
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +27,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         //        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         //        locationManager.delegate = self
         //        locationManager.requestLocation()
+         updateWidget()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,19 +35,19 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         //        var currenSize = self.preferredContentSize
         //        currenSize.height = 200.0
         //        self.preferredContentSize = currenSize
-        updateWidget()
+       
     }
 
     
-    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        updateWidget()
-        completionHandler(NCUpdateResult.newData)
-    }
+//    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
+//        // Perform any setup necessary in order to update the view.
+//        
+//        // If an error is encountered, use NCUpdateResult.Failed
+//        // If there's no update required, use NCUpdateResult.NoData
+//        // If there's an update, use NCUpdateResult.NewData
+//        updateWidget()
+//        completionHandler(NCUpdateResult.newData)
+//    }
     
     @IBOutlet var btns: [UIButton]!
 
@@ -90,11 +64,14 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
             }
         }
     }
+    
+    
     func updateWidget()
     {
 
         if #available(iOSApplicationExtension 10.0, *) { // Xcode would suggest you implement this.
-            extensionContext?.widgetLargestAvailableDisplayMode = .compact
+            extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+
         } else {
             // Fallback on earlier versions
         }
@@ -108,19 +85,20 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
 
     }
     
-    @available(iOSApplicationExtension 10.0, *)
-    func widgetActiveDisplayModeDidChange(activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        print("widgetActiveDisplayModeDidChange iii")
+//         preferredContentSize = CGSize(width: 0.0, height: 300.0)
         if activeDisplayMode == .expanded {
-             preferredContentSize = maxSize
-//            preferredContentSize = CGSize(width: 0.0, height: 800.0)
+            //             preferredContentSize = maxSize
+            preferredContentSize = CGSize(width: 0.0, height: 250.0)
+            print("preferredContentSize = \(preferredContentSize)")
         } else if activeDisplayMode == .compact {
-            preferredContentSize = maxSize
+//            preferredContentSize = CGSize(width: 0.0, height: 300.0)
+                        preferredContentSize = maxSize
         }
     }
     
     
-    @IBAction func goHomeClicked(_ sender: UIButton) {
-        openURL("goHome")
 
-    }
 }
