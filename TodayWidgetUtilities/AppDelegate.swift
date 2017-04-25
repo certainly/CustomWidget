@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -93,37 +95,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
                         print("777133111qqq")
                         print(url)
-        if url.description.contains("goHome") {
+        let tag = url.description
+        switch tag {
+        case "todayctl://goHome":
             UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
-        } else {
+        case "todayctl://two":
             currentViewController?.startTimer()
+//        case "todayctl://music":
+//            playMusic()
+            
+        default:
+            break
         }
+        
+        
+        
 //                        AppDelegate.autoStartFlag = true
                         return true
-//        if let invite = FIRInvites.handle(url, sourceApplication:sourceApplication, annotation:annotation) as? FIRReceivedInvite {
-//            let matchType =
-//                (invite.matchType == .weak) ? "Weak" : "Strong"
-//            print("Invite received from: \(sourceApplication) Deeplink: \(invite.deepLink)," +
-//                "Id: \(invite.inviteId), Type: \(matchType)")
-//            return true
-//        }
-//        
-//        return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
+
     }
-    // [END openurl]
-//    func application(_ application: UIApplication, open urls: URL, sourceApplication: String?, annotation: Any) -> Bool {
-//        
-//        let obj = urls.absoluteString.components(separatedBy: "://")[1]
-//        NotificationCenter.default.post(name: widgetNotificationName, object: obj)
-//        print("App delegate")
-//        return true
-//    }
     
-//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-//        print("App delegate2")
-//        return true
-////        let isHandled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[.sourceApplication] as! String!, annotation: options[.annotation])
-////        return isHandled
-//    }
+
 }
 

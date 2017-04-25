@@ -69,8 +69,17 @@
                                                     <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Jkk-rm-olm"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh6-XF-rdD">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ7-tm-Ub6">
                                                 <rect key="frame" x="87.5" y="0.0" width="77.5" height="37.5"/>
+                                                <state key="normal" title="App-Prefs:root=BATTERY_USAGE" image="battery">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="zxA-ar-3vh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh6-XF-rdD">
+                                                <rect key="frame" x="175" y="0.0" width="77.5" height="37.5"/>
                                                 <state key="normal" title="googlechrome://" image="chrome">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -78,8 +87,22 @@
                                                     <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="6Bj-Sw-ud1"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34N-Qs-l3k">
+                                                <rect key="frame" x="262.5" y="0.0" width="77.5" height="37.5"/>
+                                                <state key="normal" title="x-web-search://" image="safari">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="0DE-A7-n8A"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mHp-OI-gHr">
+                                        <rect key="frame" x="0.0" y="95" width="340" height="37.5"/>
+                                        <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAM-Fa-fb7">
-                                                <rect key="frame" x="175" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="37.5"/>
                                                 <state key="normal" title="weixin://" image="wechat">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -87,9 +110,27 @@
                                                     <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="lL9-fb-iXt"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLq-by-vQI">
+                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="37.5"/>
+                                                <state key="normal" title="alipay://" image="alipay">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="JSh-tH-tme"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDh-eG-mj0">
+                                                <rect key="frame" x="175" y="0.0" width="77.5" height="37.5"/>
+                                                <state key="normal" title="alipayqr://platformapi/startapp?saId=20000056" image="paynow">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="DUm-mk-ytW"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QE-lb-9t8">
                                                 <rect key="frame" x="262.5" y="0.0" width="77.5" height="37.5"/>
-                                                <state key="normal" title="x-com-amrc://" image="other">
+                                                <state key="normal" title="x-com-amrc://" image="reddit">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -98,25 +139,25 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mHp-OI-gHr">
-                                        <rect key="frame" x="0.0" y="95" width="340" height="37.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z7z-CQ-GSp">
+                                        <rect key="frame" x="0.0" y="142.5" width="340" height="37.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34N-Qs-l3k">
-                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="37.5"/>
-                                                <state key="normal" title="x-web-search://" image="safari">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="0DE-A7-n8A"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmM-tw-RBZ">
-                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="37.5"/>
                                                 <state key="normal" title="ibooks://" image="ibooks">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="R8y-bj-7ZR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH5-mk-anX">
+                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="37.5"/>
+                                                <state key="normal" title="duokan-reader://" image="duokan">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="KbP-3V-9KA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-cb-P0w">
@@ -128,54 +169,13 @@
                                                     <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="96p-Hr-6Xh"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLq-by-vQI">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBe-Sr-vRG">
                                                 <rect key="frame" x="262.5" y="0.0" width="77.5" height="37.5"/>
-                                                <state key="normal" title="alipay://" image="alipay">
+                                                <state key="normal" title="todayctl://music" image="applemusic">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="JSh-tH-tme"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z7z-CQ-GSp">
-                                        <rect key="frame" x="0.0" y="142.5" width="340" height="37.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ7-tm-Ub6">
-                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="37.5"/>
-                                                <state key="normal" title="App-Prefs:root=BATTERY_USAGE" image="battery">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="zxA-ar-3vh"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDh-eG-mj0">
-                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="37.5"/>
-                                                <state key="normal" title="alipayqr://platformapi/startapp?saId=20000056" image="paynow">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="DUm-mk-ytW"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH5-mk-anX">
-                                                <rect key="frame" x="175" y="0.0" width="77.5" height="37.5"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="KbP-3V-9KA"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBe-Sr-vRG">
-                                                <rect key="frame" x="262.5" y="0.0" width="77.5" height="37.5"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="9bK-B9-RhQ"/>
+                                                    <action selector="playbtnPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="pIv-ot-NPA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -201,16 +201,16 @@
                         <outletCollection property="btns" destination="nmw-4G-YXC" collectionClass="NSMutableArray" id="Cxp-l2-FT3"/>
                         <outletCollection property="btns" destination="iID-DP-5IQ" collectionClass="NSMutableArray" id="6wA-uW-i8i"/>
                         <outletCollection property="btns" destination="inP-pE-qlK" collectionClass="NSMutableArray" id="SwM-is-F3j"/>
-                        <outletCollection property="btns" destination="qAM-Fa-fb7" collectionClass="NSMutableArray" id="5Ht-fF-6Vh"/>
-                        <outletCollection property="btns" destination="1QE-lb-9t8" collectionClass="NSMutableArray" id="86a-cg-dcj"/>
                         <outletCollection property="btns" destination="mh6-XF-rdD" collectionClass="NSMutableArray" id="sAj-ye-cYw"/>
+                        <outletCollection property="btns" destination="uH5-mk-anX" collectionClass="NSMutableArray" id="aB9-kK-Ilg"/>
+                        <outletCollection property="btns" destination="qAM-Fa-fb7" collectionClass="NSMutableArray" id="5Ht-fF-6Vh"/>
                         <outletCollection property="btns" destination="34N-Qs-l3k" collectionClass="NSMutableArray" id="WWK-qf-DNv"/>
-                        <outletCollection property="btns" destination="UmM-tw-RBZ" collectionClass="NSMutableArray" id="98z-Hq-lzH"/>
-                        <outletCollection property="btns" destination="dxW-cb-P0w" collectionClass="NSMutableArray" id="m26-8J-M2w"/>
                         <outletCollection property="btns" destination="dQ7-tm-Ub6" collectionClass="NSMutableArray" id="2sU-e9-OPw"/>
+                        <outletCollection property="btns" destination="UmM-tw-RBZ" collectionClass="NSMutableArray" id="98z-Hq-lzH"/>
                         <outletCollection property="btns" destination="lDh-eG-mj0" collectionClass="NSMutableArray" id="M57-av-Fzh"/>
-                        <outletCollection property="btns" destination="uH5-mk-anX" collectionClass="NSMutableArray" id="WRT-Gd-vLQ"/>
-                        <outletCollection property="btns" destination="iBe-Sr-vRG" collectionClass="NSMutableArray" id="v0z-0h-icu"/>
+                        <outletCollection property="btns" destination="1QE-lb-9t8" collectionClass="NSMutableArray" id="86a-cg-dcj"/>
+                        <outletCollection property="btns" destination="dxW-cb-P0w" collectionClass="NSMutableArray" id="m26-8J-M2w"/>
+                        <outletCollection property="btns" destination="iBe-Sr-vRG" collectionClass="NSMutableArray" id="BFY-TC-bJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,14 +221,16 @@
     <resources>
         <image name="alarm" width="512" height="512"/>
         <image name="alipay" width="512" height="512"/>
+        <image name="applemusic" width="512" height="512"/>
         <image name="battery" width="512" height="512"/>
         <image name="chrome" width="128" height="128"/>
+        <image name="duokan" width="512" height="512"/>
         <image name="home" width="512" height="512"/>
         <image name="ibooks" width="512" height="402"/>
         <image name="music" width="512" height="512"/>
-        <image name="other" width="128" height="128"/>
         <image name="paynow" width="512" height="512"/>
         <image name="podcast" width="128" height="128"/>
+        <image name="reddit" width="512" height="512"/>
         <image name="safari" width="512" height="512"/>
         <image name="setting" width="512" height="512"/>
         <image name="wechat" width="512" height="512"/>
