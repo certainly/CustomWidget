@@ -52,13 +52,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet var btns: [UIButton]!
     @IBAction func playbtnPressed(_ sender: UIButton) {
-        playMusic()
+        playMusic(sender)
     }
 
     @IBAction func openApp(_ sender: UIButton) {
         //        let url: URL? = URL(string: "location:")!
 //        let url: URL? = URL(string: "pcast:")!
-        print("se \(sender.currentTitle)")
+//        print("se \(sender.currentTitle)")
          let url: URL? = URL(string: sender.currentTitle!)!
         if let appurl = url {
             self.extensionContext!.open(appurl){
@@ -103,9 +103,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
-    func playMusic() {
+    func playMusic(_ sender: UIButton) {
         appleMusicRequestPermission()
-        playMyList()
+        playMyList(sender)
     }
     
     func appleMusicRequestPermission() {
@@ -161,10 +161,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     }
     
-    private func playMyList() {
+    private func playMyList(_ sender: UIButton) {
         let player =  MPMusicPlayerController.systemMusicPlayer()
         if let _ = player.nowPlayingItem {
             player.stop()
+            sender.setImage(#imageLiteral(resourceName: "applemusic"), for: .normal)
             return
         }
         let query: MPMediaQuery = MPMediaQuery.playlists()
@@ -181,6 +182,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             if name == "arecertainly" {
                 player.setQueue(with: collection)
                 player.play()
+                sender.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
                 break
             }
         }
