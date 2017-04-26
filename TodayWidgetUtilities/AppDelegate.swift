@@ -87,9 +87,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    var primaryViewController: UINavigationController {
 //        return  window!.rootViewController.first as! UINavigationController
 //    }
-    var currentViewController: ViewController? {
-        return window!.rootViewController as? ViewController
-    }
+     lazy var currentViewController: ViewController? = {
+        return self.window!.rootViewController as? ViewController
+    }()
     
     func application(_ application: UIApplication,
                      open url: URL, sourceApplication: String?, annotation: Any) -> Bool {

@@ -19,36 +19,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
 
 
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        homeBtn.layer.masksToBounds = true
-//        homeBtn.layer.cornerRadius = homeBtn.frame.width/2
-        // Do any additional setup after loading the view from its nib.
-        //        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        //        locationManager.delegate = self
-        //        locationManager.requestLocation()
-         updateWidget()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //        var currenSize = self.preferredContentSize
-        //        currenSize.height = 200.0
-        //        self.preferredContentSize = currenSize
-       
-    }
 
     
-//    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-//        // Perform any setup necessary in order to update the view.
-//        
-//        // If an error is encountered, use NCUpdateResult.Failed
-//        // If there's no update required, use NCUpdateResult.NoData
-//        // If there's an update, use NCUpdateResult.NewData
-//        updateWidget()
-//        completionHandler(NCUpdateResult.newData)
-//    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateWidget()
+    }
+
+
+
     
     @IBOutlet var btns: [UIButton]!
     @IBAction func playbtnPressed(_ sender: UIButton) {
@@ -95,7 +74,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 //         preferredContentSize = CGSize(width: 0.0, height: 300.0)
         if activeDisplayMode == .expanded {
             //             preferredContentSize = maxSize
-            preferredContentSize = CGSize(width: 0.0, height: 320.0)
+            preferredContentSize = CGSize(width: maxSize.width, height: 320.0)
             print("preferredContentSize = \(preferredContentSize)")
         } else if activeDisplayMode == .compact {
 //            preferredContentSize = CGSize(width: 0.0, height: 300.0)
@@ -143,7 +122,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 
             case .authorized:
                 
-                print("All good - the user tapped 'OK', so you're clear to move forward and start playing.")
+                 print("All good - the user tapped 'OK', so you're clear to move forward and start playing.")
                 
             case .denied:
                 
