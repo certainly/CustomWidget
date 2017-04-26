@@ -21,8 +21,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
 
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         updateWidget()
     }
 
