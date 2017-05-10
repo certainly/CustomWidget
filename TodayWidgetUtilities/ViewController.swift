@@ -14,7 +14,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     
     let counterInital = 20 * 60
-    let VOLUME:Float = 0.4
+    let VOLUME:Float = 0.5
 //    let counterInital = 10 //5 * 60
     var counter = 0
     var timer = Timer()
