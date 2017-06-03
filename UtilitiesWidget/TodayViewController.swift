@@ -83,46 +83,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func playMusic(_ sender: UIButton) {
-        appleMusicRequestPermission()
-        playMyList(sender)
+        if  appleMusicRequestPermission() {
+            
+            playMyList(sender)
+        }
     }
     
-    func appleMusicRequestPermission() {
-        
-        switch SKCloudServiceController.authorizationStatus() {
-            
-        case .authorized:
-            
-            print("The user's already authorized - we don't need to do anything more here, so we'll exit early.")
-            return
-            
-        case .denied:
-            
-            print("The user has selected 'Don't Allow' in the past - so we're going to show them a different dialog to push them through to their Settings page and change their mind, and exit the function early.")
-            
-            // Show an alert to guide users into the Settings
-            
-            return
-            
-        case .notDetermined:
-            
-            print("The user hasn't decided yet - so we'll break out of the switch and ask them.")
-            break
-            
-        case .restricted:
-            
-            print("User may be restricted; for example, if the device is in Education mode, it limits external Apple Music usage. This is similar behaviour to Denied.")
-            return
-            
-        }
-        
+    func requestAppleMusicPermission() {
         SKCloudServiceController.requestAuthorization { (status:SKCloudServiceAuthorizationStatus) in
             
             switch status {
                 
             case .authorized:
                 
-                 print("All good - the user tapped 'OK', so you're clear to move forward and start playing.")
+                print("All good - the user tapped 'OK', so you're clear to move forward and start playing.")
+                
                 
             case .denied:
                 
@@ -137,6 +112,40 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             }
             
         }
+
+    
+    }
+    
+    func appleMusicRequestPermission() -> Bool {
+        
+        switch SKCloudServiceController.authorizationStatus() {
+            
+        case .authorized:
+            
+            print("The user's already authorized - we don't need to do anything more here, so we'll exit early.")
+            return true
+            
+        case .denied:
+            
+            print("The user has selected 'Don't Allow' in the past - so we're going to show them a different dialog to push them through to their Settings page and change their mind, and exit the function early.")
+            
+            // Show an alert to guide users into the Settings
+            
+            return false
+            
+        case .notDetermined:
+            
+            print("The user hasn't decided yet - so we'll break out of the switch and ask them.")
+            requestAppleMusicPermission()
+            return false
+            
+        case .restricted:
+            
+            print("User may be restricted; for example, if the device is in Education mode, it limits external Apple Music usage. This is similar behaviour to Denied.")
+            return false
+            
+        }
+        
         
     }
     
