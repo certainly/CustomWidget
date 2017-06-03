@@ -163,7 +163,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     private func finishPlayer() {
-        print("reset originVol to \(originVol)")
+        print("reset originVol to \(String(describing: originVol))")
         if originVol != nil {
             setVolumn(originVol!)
         }
