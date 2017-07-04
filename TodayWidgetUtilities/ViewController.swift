@@ -22,6 +22,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var volumeView: UIView?
     var originVol: Float?
     var originBright: CGFloat?
+    lazy var formatter: DateComponentsFormatter = {
+        let fmt = DateComponentsFormatter()
+        fmt.allowedUnits = [.second , .minute , .hour]
+        return fmt
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +36,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         view.addSubview(volumeView!)
         UIApplication.shared.isIdleTimerDisabled = true
         print("ctl 1viewdidload \(AppDelegate.autoStartFlag)")
-//        if(AppDelegate.autoStartFlag) {
-//            AppDelegate.autoStartFlag = false
-//            startTimer()
-//        }
-//        test()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,8 +77,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     func timerAction() {
         counter -= 1
-        timeText.setTitle("\(counter)", for: UIControlState.normal)
-        print("ctl counter -- \(counter)")
+        let formattedTimeLeft = formatter.string(from: TimeInterval(counter))
+        timeText.setTitle("\(formattedTimeLeft ?? "blank")", for: UIControlState.normal)
+//        print("ctl counter -- \(counter)")
         if counter <= 0 {
             //            counter = -1
             reset()
@@ -91,7 +95,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         timer.invalidate()
         soundPlayer?.stop()
         counter = counterInital
-        timeText.setTitle("\(counter)", for: UIControlState.normal)
+        let formattedTimeLeft = formatter.string(from: TimeInterval(counter))
+        timeText.setTitle("\(formattedTimeLeft ?? "blank")", for: UIControlState.normal)
     }
     
     func prepareSound() {
