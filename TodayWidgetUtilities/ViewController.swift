@@ -133,7 +133,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     
                     if let xx = slider?.value{
                         slider?.value = vol
-                         originVol = xx
+                        if xx != 0.0 {
+                          
+                            originVol = xx
+                        } else {
+//                            originVol = 1
+                        }
+                        
+                        
                     }
                     print("ctl slider2: \(String(describing: slider?.value))")
                 }
