@@ -89,6 +89,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             playSound()
             //            timer2.invalidate()
         }
+        if counter == (counterInital - 1) {
+            setVolumn(VOLUME)
+        } else {
+//            print("counter = \(counter)")
+        }
     }
     
     func reset() {
@@ -112,7 +117,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             //            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
             //            MPMusicPlayerController.applicationMusicPlayer()
             soundPlayer?.prepareToPlay()
-            setVolumn(VOLUME)
+//            setVolumn(VOLUME)
             
 //            soundPlayer?.setVolume(1.0, fadeDuration: 1.5)
         } catch {
@@ -133,12 +138,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     
                     if let xx = slider?.value{
                         slider?.value = vol
-                        if xx != 0.0 {
-                          
-                            originVol = xx
-                        } else {
-//                            originVol = 1
-                        }
+                         originVol = xx
+//                        if xx != 0.0 {
+//
+//                            originVol = xx
+//                        } else {
+////                            originVol = 1
+//                        }
                         
                         
                     }
