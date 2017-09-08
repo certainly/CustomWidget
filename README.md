@@ -1,4 +1,4 @@
 # CustomWidget
 Custom todaywidget
 
-<img src="https://i.imgur.com/CUwz4OR.gif" alt="Code Coverage">
+<img src="https://i.imgur.com/pwCT5AW.gif" alt="Code Coverage">
