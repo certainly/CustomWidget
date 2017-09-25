@@ -11,7 +11,6 @@
 		5C3B57A71E70EE5300CE3BAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B57A61E70EE5300CE3BAE /* AppDelegate.swift */; };
 		5C3B57A91E70EE5300CE3BAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B57A81E70EE5300CE3BAE /* ViewController.swift */; };
 		5C3B57AC1E70EE5300CE3BAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C3B57AA1E70EE5300CE3BAE /* Main.storyboard */; };
-		5C3B57AE1E70EE5300CE3BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C3B57AD1E70EE5300CE3BAE /* Assets.xcassets */; };
 		5C3B57B11E70EE5300CE3BAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C3B57AF1E70EE5300CE3BAE /* LaunchScreen.storyboard */; };
 		5C3B57BF1E70EE8E00CE3BAE /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3B57BE1E70EE8E00CE3BAE /* NotificationCenter.framework */; };
 		5C3B57C21E70EE8E00CE3BAE /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B57C11E70EE8E00CE3BAE /* TodayViewController.swift */; };
@@ -185,7 +184,7 @@
 				TargetAttributes = {
 					5C3B57A21E70EE5300CE3BAE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 62ZVP5G4A2;
+						DevelopmentTeam = 2BE89PGHN9;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -198,7 +197,7 @@
 					};
 					5C3B57BB1E70EE8E00CE3BAE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 62ZVP5G4A2;
+						DevelopmentTeam = 2BE89PGHN9;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -233,7 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C3B57B11E70EE5300CE3BAE /* LaunchScreen.storyboard in Resources */,
-				5C3B57AE1E70EE5300CE3BAE /* Assets.xcassets in Resources */,
 				5C3B57D11E712E1500CE3BAE /* clair.mp3 in Resources */,
 				5C3B57AC1E70EE5300CE3BAE /* Main.storyboard in Resources */,
 			);
@@ -405,10 +403,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TodayWidgetUtilities/TodayWidgetUtilities.entitlements;
-				DEVELOPMENT_TEAM = 62ZVP5G4A2;
+				DEVELOPMENT_TEAM = 2BE89PGHN9;
 				INFOPLIST_FILE = TodayWidgetUtilities/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.certainly.TodayWidgetUtilities;
+				PRODUCT_BUNDLE_IDENTIFIER = com.certainly3.TodayWidgetUtilities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -420,10 +419,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TodayWidgetUtilities/TodayWidgetUtilities.entitlements;
-				DEVELOPMENT_TEAM = 62ZVP5G4A2;
+				DEVELOPMENT_TEAM = 2BE89PGHN9;
 				INFOPLIST_FILE = TodayWidgetUtilities/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.certainly.TodayWidgetUtilities;
+				PRODUCT_BUNDLE_IDENTIFIER = com.certainly3.TodayWidgetUtilities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -433,10 +433,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = UtilitiesWidget/UtilitiesWidget.entitlements;
-				DEVELOPMENT_TEAM = 62ZVP5G4A2;
+				DEVELOPMENT_TEAM = 2BE89PGHN9;
 				INFOPLIST_FILE = UtilitiesWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.certainly.TodayWidgetUtilities.UtilitiesWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.certainly3.TodayWidgetUtilities.UtilitiesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -447,10 +448,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = UtilitiesWidget/UtilitiesWidget.entitlements;
-				DEVELOPMENT_TEAM = 62ZVP5G4A2;
+				DEVELOPMENT_TEAM = 2BE89PGHN9;
 				INFOPLIST_FILE = UtilitiesWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.certainly.TodayWidgetUtilities.UtilitiesWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.certainly3.TodayWidgetUtilities.UtilitiesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

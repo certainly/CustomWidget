@@ -9,13 +9,16 @@
 import UIKit
 import AVFoundation
 import MediaPlayer
+import AudioToolbox
 
 class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     
+    @IBOutlet weak var switchMode: UISwitch!
+    @IBOutlet weak var notifyMode: UILabel!
     let counterInital = 20 * 60
     let VOLUME:Float = 0.5
-//    let counterInital = 10 //5 * 60
+//    let counterInital = 4 //5 * 60
     var counter = 0
     var timer = Timer()
     var soundPlayer: AVAudioPlayer?
@@ -36,12 +39,32 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         view.addSubview(volumeView!)
         UIApplication.shared.isIdleTimerDisabled = true
         print("ctl 1viewdidload \(AppDelegate.autoStartFlag)")
-        
-        
+        switchMode.isOn =  UserDefaults.standard.bool(forKey:  "isMusicModeOn")
+         notifyMode.text = switchMode.isOn ? "music" : "vibrate"
         
         
     }
+    
+//    func get_uuid() -> Bool{
+//        let tMode =
+//        //判断UserDefaults中是否已经存在
+//        if(tMode != nil){
+//            return tMode
+//        }else{
+//            //不存在则生成一个新的并保存
+//
+//            UserDefaults.standard.set(tMode, forKey: "isMusicModeOn")
+//            return tMode
+//        }
+//    }
+    
+    @IBAction func switchChanged(_ sender: UISwitch) {
+        notifyMode.text = sender.isOn ? "music" : "vibrate"
+        UserDefaults.standard.set(sender.isOn, forKey: "isMusicModeOn")
+    }
+    
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,7 +92,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     func startTimer()  {
         reset()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-        prepareSound()
+      
+        if(switchMode.isOn) {
+            prepareSound()
+        }
         originBright = UIScreen.main.brightness
         UIScreen.main.brightness = 0.1
 
@@ -86,7 +112,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             counter = -1
             timeText.setTitle("finished", for: UIControlState.normal)
             //            prepareSound()
-            playSound()
+            if(switchMode.isOn) {
+                 playSound()
+            } else {
+//                let feedbackGenerator = UISelectionFeedbackGenerator()
+//                feedbackGenerator.selectionChanged()
+
+               
+                 AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
+           
             //            timer2.invalidate()
         }
         if counter == (counterInital - 1) {
