@@ -45,18 +45,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
-//    func get_uuid() -> Bool{
-//        let tMode =
-//        //判断UserDefaults中是否已经存在
-//        if(tMode != nil){
-//            return tMode
-//        }else{
-//            //不存在则生成一个新的并保存
-//
-//            UserDefaults.standard.set(tMode, forKey: "isMusicModeOn")
-//            return tMode
-//        }
-//    }
+
     
     @IBAction func switchChanged(_ sender: UISwitch) {
         notifyMode.text = sender.isOn ? "music" : "vibrate"
@@ -93,9 +82,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         reset()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
       
-        if(switchMode.isOn) {
-            prepareSound()
-        }
+//        if(switchMode.isOn) {
+//            prepareSound()
+//        }
         originBright = UIScreen.main.brightness
         UIScreen.main.brightness = 0.1
 
@@ -111,8 +100,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             reset()
             counter = -1
             timeText.setTitle("finished", for: UIControlState.normal)
-            //            prepareSound()
+
             if(switchMode.isOn) {
+                prepareSound()
                  playSound()
             } else {
 //                let feedbackGenerator = UISelectionFeedbackGenerator()
@@ -120,6 +110,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
                
                  AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                finishPlayer()
             }
            
             //            timer2.invalidate()
