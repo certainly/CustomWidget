@@ -23,10 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3uw-6B-q3B">
-                                <rect key="frame" x="46" y="40" width="228" height="428"/>
+                                <rect key="frame" x="26" y="40" width="268" height="478"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="933-cK-6J5">
-                                        <rect key="frame" x="87.5" y="0.0" width="53" height="50"/>
+                                        <rect key="frame" x="107.5" y="0.0" width="53" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="u1y-mV-H0K"/>
                                         </constraints>
@@ -37,7 +37,7 @@
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lEj-HZ-a94">
-                                        <rect key="frame" x="57.5" y="70" width="113" height="41"/>
+                                        <rect key="frame" x="8" y="70" width="252" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="a0c-gc-jU1"/>
                                         </constraints>
@@ -50,7 +50,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIU-7l-lon">
-                                        <rect key="frame" x="35" y="130" width="158" height="298"/>
+                                        <rect key="frame" x="55" y="130" width="158" height="348"/>
                                         <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="48"/>
                                         <state key="normal" title="ahaha0">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,14 +60,17 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="lEj-HZ-a94" firstAttribute="leading" secondItem="3uw-6B-q3B" secondAttribute="leading" constant="8" id="Nql-ER-ZOJ"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3uw-6B-q3B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="4Jb-qQ-coi"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3uw-6B-q3B" secondAttribute="bottom" constant="100" id="gNT-nV-vU6"/>
-                            <constraint firstItem="3uw-6B-q3B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="piu-gG-Dgm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3uw-6B-q3B" secondAttribute="trailing" constant="30" id="xB5-e5-U9H"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3uw-6B-q3B" secondAttribute="bottom" constant="50" id="gNT-nV-vU6"/>
+                            <constraint firstItem="3uw-6B-q3B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="piu-gG-Dgm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3uw-6B-q3B" secondAttribute="trailing" constant="10" id="xB5-e5-U9H"/>
                         </constraints>
                     </view>
                     <connections>
