@@ -36,25 +36,21 @@
                                             <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yeP-gj-4vD"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pdo-Id-soI">
-                                        <rect key="frame" x="57" y="70" width="114.5" height="31"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXY-Rs-G8P">
-                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLv-RA-yXv">
-                                                <rect key="frame" x="65.5" y="0.0" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="02E-KG-lFY"/>
-                                                </connections>
-                                            </switch>
-                                        </subviews>
-                                    </stackView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lEj-HZ-a94">
+                                        <rect key="frame" x="57.5" y="70" width="113" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="a0c-gc-jU1"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="music"/>
+                                            <segment title="vibrate"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="switchSegmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="0uU-W9-5ih"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIU-7l-lon">
-                                        <rect key="frame" x="35" y="121" width="158" height="307"/>
+                                        <rect key="frame" x="35" y="130" width="158" height="298"/>
                                         <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="48"/>
                                         <state key="normal" title="ahaha0">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,8 +71,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="notifyMode" destination="wXY-Rs-G8P" id="Yry-Ki-GMq"/>
-                        <outlet property="switchMode" destination="yLv-RA-yXv" id="DRw-xa-tOM"/>
+                        <outlet property="modeSegment" destination="lEj-HZ-a94" id="D1q-q6-004"/>
                         <outlet property="timeText" destination="UIU-7l-lon" id="WGD-wh-XlA"/>
                     </connections>
                 </viewController>

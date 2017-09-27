@@ -13,9 +13,9 @@ import AudioToolbox
 
 class ViewController: UIViewController, AVAudioPlayerDelegate {
 
+    @IBOutlet weak var modeSegment: UISegmentedControl!
     
-    @IBOutlet weak var switchMode: UISwitch!
-    @IBOutlet weak var notifyMode: UILabel!
+
     let counterInital = 20 * 60
     let VOLUME:Float = 0.5
 //    let counterInital = 4 //5 * 60
@@ -25,6 +25,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var volumeView: UIView?
     var originVol: Float?
     var originBright: CGFloat?
+    var isMusicOn = false
+    
     lazy var formatter: DateComponentsFormatter = {
         let fmt = DateComponentsFormatter()
         fmt.allowedUnits = [.second , .minute , .hour]
@@ -39,18 +41,21 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         view.addSubview(volumeView!)
         UIApplication.shared.isIdleTimerDisabled = true
         print("ctl 1viewdidload \(AppDelegate.autoStartFlag)")
-        switchMode.isOn =  UserDefaults.standard.bool(forKey:  "isMusicModeOn")
-         notifyMode.text = switchMode.isOn ? "music" : "vibrate"
-        
-        
+         isMusicOn =  UserDefaults.standard.bool(forKey:  "isMusicModeOn")
+        modeSegment.selectedSegmentIndex = isMusicOn ? 0 : 1
+
+        print("isMusic  to \(isMusicOn)")
     }
     
 
-    
-    @IBAction func switchChanged(_ sender: UISwitch) {
-        notifyMode.text = sender.isOn ? "music" : "vibrate"
-        UserDefaults.standard.set(sender.isOn, forKey: "isMusicModeOn")
+
+    @IBAction func switchSegmentChanged(_ sender: UISegmentedControl) {
+        isMusicOn = sender.selectedSegmentIndex == 0 ? true : false
+        print("isMusic on changed to \(isMusicOn)")
+        UserDefaults.standard.set(isMusicOn, forKey: "isMusicModeOn")
     }
+    
+
     
 
     
@@ -101,7 +106,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             counter = -1
             timeText.setTitle("finished", for: UIControlState.normal)
 
-            if(switchMode.isOn) {
+            if(isMusicOn) {
                 prepareSound()
                  playSound()
             } else {
@@ -191,6 +196,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     private func goHome() {
+        UIScreen.main.brightness = originBright!
         soundPlayer?.stop()
         soundPlayer = nil
         UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
@@ -211,7 +217,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         if originVol != nil {
             setVolumn(originVol!)
         }
-        UIScreen.main.brightness = originBright!
+        
         goHome()
     }
     
