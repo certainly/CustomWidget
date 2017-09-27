@@ -43,7 +43,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         print("ctl 1viewdidload \(AppDelegate.autoStartFlag)")
          isMusicOn =  UserDefaults.standard.bool(forKey:  "isMusicModeOn")
         modeSegment.selectedSegmentIndex = isMusicOn ? 0 : 1
-
+        originBright = UIScreen.main.brightness
         print("isMusic  to \(isMusicOn)")
     }
     
@@ -66,7 +66,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var timeText: UIButton!
     @IBAction func timerClicked(_ sender: UIButton) {
         if let _ = soundPlayer?.isPlaying {
-            finishPlayer()
+           goHome()
         }
         
         if counter == -1 {
@@ -87,9 +87,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         reset()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
       
-//        if(switchMode.isOn) {
-//            prepareSound()
-//        }
+
         originBright = UIScreen.main.brightness
         UIScreen.main.brightness = 0.1
 
@@ -110,12 +108,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 prepareSound()
                  playSound()
             } else {
-//                let feedbackGenerator = UISelectionFeedbackGenerator()
-//                feedbackGenerator.selectionChanged()
 
-               
-                 AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                finishPlayer()
+
+                [0,3,5,7,9,11,13].forEach{ Timer.scheduledTimer(timeInterval: $0, target: self, selector: #selector(vibrate), userInfo: nil, repeats: false)      }
+//                goHome()
+
             }
            
             //            timer2.invalidate()
@@ -125,6 +122,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         } else {
 //            print("counter = \(counter)")
         }
+    }
+    
+    func vibrate() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
     func reset() {
@@ -196,6 +197,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     private func goHome() {
+        print("reset originVol to \(String(describing: originVol))")
+        if originVol != nil {
+            setVolumn(originVol!)
+        }
         UIScreen.main.brightness = originBright!
         soundPlayer?.stop()
         soundPlayer = nil
@@ -212,17 +217,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     }
     
-    private func finishPlayer() {
-        print("reset originVol to \(String(describing: originVol))")
-        if originVol != nil {
-            setVolumn(originVol!)
-        }
-        
-        goHome()
-    }
+
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        finishPlayer()
+        goHome()
     }
 
 }
