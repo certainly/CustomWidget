@@ -35,7 +35,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let rect = CGRect(x: 20, y: view.frame.size.height  / 3, width: 280, height: 30)
+        let rect = CGRect(x: 20, y: view.frame.size.height  / 2, width: 280, height: 30)
         volumeView = MPVolumeView(frame: rect)
         
         view.addSubview(volumeView!)
@@ -56,6 +56,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
 
+    @IBAction func settingBtnTapped(_ sender: Any) {
+          performSegue(withIdentifier: "TimerSettingSegue", sender: nil)
+    }
     
 
     
@@ -67,17 +70,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func timerClicked(_ sender: UIButton) {
         if let _ = soundPlayer?.isPlaying {
            goHome()
-        }
-        
-        if counter == -1 {
+        } else if counter == -1 {
             reset()
-            return
-        }
-        if counter != 0  &&  counter != counterInital {
+        } else  if counter != 0  &&  counter != counterInital {
             reset()
-            return
+        } else {
+            startTimer()
         }
-        startTimer()
 
 
 
@@ -204,6 +203,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         UIScreen.main.brightness = originBright!
         soundPlayer?.stop()
         soundPlayer = nil
+        reset()
         UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
     }
     
