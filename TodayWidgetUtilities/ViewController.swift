@@ -131,8 +131,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         timer.invalidate()
         soundPlayer?.stop()
         counter = counterInital
-        let formattedTimeLeft = formatter.string(from: TimeInterval(counter))
-        timeText.setTitle("\(formattedTimeLeft ?? "blank")", for: UIControlState.normal)
+//        let formattedTimeLeft = "28:00"
+        let formattedTimeLeft = formatter.string(from: TimeInterval(counter)) ?? "blank"
+        if let _ = timeText {
+
+            timeText.setTitle(formattedTimeLeft, for: UIControlState.normal)
+        }
     }
     
     func prepareSound() {

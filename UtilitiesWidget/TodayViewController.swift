@@ -168,6 +168,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             name = collection.value(forProperty: MPMediaPlaylistPropertyName) as! String
             print(name)
             if name == "arecertainly" {
+                player.stop()
                 player.setQueue(with: collection)
                 player.play()
                 sender.setImage(#imageLiteral(resourceName: "pause"), for: .normal)

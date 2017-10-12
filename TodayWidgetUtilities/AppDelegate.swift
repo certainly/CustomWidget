@@ -88,8 +88,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        return  window!.rootViewController.first as! UINavigationController
 //    }
      lazy var currentViewController: ViewController? = {
-        let nav:UINavigationController =  self.window!.rootViewController as! UINavigationController
-        return nav.viewControllers[0] as! ViewController
+        var rz: ViewController?
+        if let viewController = self.window?.rootViewController {
+            if(viewController is UINavigationController){
+               let  tViewController = (viewController as! UINavigationController).visibleViewController!
+                return tViewController as? ViewController
+            }
+        }
+        return rz
+        
+       
+
     }()
     
     func application(_ application: UIApplication,
@@ -101,6 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case "todayctl://goHome":
             UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
         case "todayctl://two":
+            print("two log...")
             print("two: \(currentViewController)")
             currentViewController?.startTimer()
 //        case "todayctl://music":
