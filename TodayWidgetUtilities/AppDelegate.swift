@@ -87,18 +87,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    var primaryViewController: UINavigationController {
 //        return  window!.rootViewController.first as! UINavigationController
 //    }
-     lazy var currentViewController: ViewController? = {
-        var rz: ViewController?
-        if let viewController = self.window?.rootViewController {
-            if(viewController is UINavigationController){
-               let  tViewController = (viewController as! UINavigationController).visibleViewController!
-                return tViewController as? ViewController
-            }
-        }
-        return rz
-        
-       
-
+    lazy var currentViewController: ViewController? = {
+        return (self.window?.rootViewController as! UINavigationController).visibleViewController as? ViewController
     }()
     
     func application(_ application: UIApplication,
