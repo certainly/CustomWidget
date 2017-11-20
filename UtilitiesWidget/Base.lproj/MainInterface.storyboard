@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,17 +19,17 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ao6-6s-KQl">
-                                <rect key="frame" x="30" y="10" width="340" height="180"/>
+                                <rect key="frame" x="30" y="10" width="340" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KdU-cq-hMX">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="67.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iID-DP-5IQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="67.5"/>
                                                 <state key="normal" title="todayctl://two" image="alarm">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -38,7 +38,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFi-SS-IFV">
-                                                <rect key="frame" x="116.5" y="0.0" width="107" height="37.5"/>
+                                                <rect key="frame" x="116.5" y="0.0" width="107" height="67.5"/>
                                                 <state key="normal" title="todayctl://goHome" image="home">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -47,7 +47,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmw-4G-YXC">
-                                                <rect key="frame" x="233.5" y="0.0" width="106.5" height="37.5"/>
+                                                <rect key="frame" x="233.5" y="0.0" width="106.5" height="67.5"/>
                                                 <state key="normal" title="pcast:" image="podcast">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -58,10 +58,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uXE-Zj-99S">
-                                        <rect key="frame" x="0.0" y="47.5" width="340" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="77.5" width="340" height="67.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inP-pE-qlK">
-                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="App-Prefs:" image="setting">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -70,7 +70,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ7-tm-Ub6">
-                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="App-Prefs:root=BATTERY_USAGE" image="battery">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -79,7 +79,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh6-XF-rdD">
-                                                <rect key="frame" x="175" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="175" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="googlechrome://" image="chrome">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -88,7 +88,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34N-Qs-l3k">
-                                                <rect key="frame" x="262.5" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="262.5" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="x-web-search://" image="safari">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -99,10 +99,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mHp-OI-gHr">
-                                        <rect key="frame" x="0.0" y="95" width="340" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="155" width="340" height="67.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAM-Fa-fb7">
-                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="weixin://" image="wechat">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -111,7 +111,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLq-by-vQI">
-                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="alipay://" image="alipay">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -120,7 +120,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDh-eG-mj0">
-                                                <rect key="frame" x="175" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="175" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="alipayqr://platformapi/startapp?saId=20000056" image="paynow">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -129,7 +129,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QE-lb-9t8">
-                                                <rect key="frame" x="262.5" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="262.5" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="apollo://" image="reddit">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -140,10 +140,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z7z-CQ-GSp">
-                                        <rect key="frame" x="0.0" y="142.5" width="340" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="232.5" width="340" height="67.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmM-tw-RBZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="ibooks://" image="ibooks">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -152,7 +152,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH5-mk-anX">
-                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="87.5" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="duokan-reader://" image="duokan">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -161,7 +161,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-cb-P0w">
-                                                <rect key="frame" x="175" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="175" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="orpheus://" image="music">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -170,7 +170,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBe-Sr-vRG">
-                                                <rect key="frame" x="262.5" y="0.0" width="77.5" height="37.5"/>
+                                                <rect key="frame" x="262.5" y="0.0" width="77.5" height="67.5"/>
                                                 <state key="normal" title="todayctl://music" image="applemusic">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -195,7 +195,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="200"/>
+                    <size key="freeformSize" width="400" height="320"/>
                     <connections>
                         <outletCollection property="btns" destination="GFi-SS-IFV" collectionClass="NSMutableArray" id="xde-Pi-cXR"/>
                         <outletCollection property="btns" destination="nmw-4G-YXC" collectionClass="NSMutableArray" id="Cxp-l2-FT3"/>
