@@ -71,17 +71,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         print("widgetActiveDisplayModeDidChange iii")
-//         preferredContentSize = CGSize(width: 0.0, height: 300.0)
-        preferredContentSize = CGSize(width: maxSize.width, height: 320.0)
-//        if activeDisplayMode == .expanded {
-//            //             preferredContentSize = maxSize
-//            preferredContentSize = CGSize(width: maxSize.width, height: 320.0)
-//            print("preferredContentSize = \(preferredContentSize)")
-//        } else if activeDisplayMode == .compact {
-////            preferredContentSize = CGSize(width: 0.0, height: 300.0)
-////                        preferredContentSize = maxSize
-//                preferredContentSize = CGSize(width: maxSize.width, height: 320.0)
-//        }
+        if activeDisplayMode == .expanded {
+            preferredContentSize = CGSize(width: maxSize.width, height: 320.0)
+        } else if activeDisplayMode == .compact {
+                  preferredContentSize = maxSize
+        }
     }
     
     func playMusic(_ sender: UIButton) {
