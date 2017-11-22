@@ -80,7 +80,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh6-XF-rdD">
                                                 <rect key="frame" x="175" y="0.0" width="77.5" height="67.5"/>
-                                                <state key="normal" title="googlechrome://" image="chrome">
+                                                <state key="normal" title="QQ0605F5AE://" image="chrome">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -144,7 +144,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmM-tw-RBZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="77.5" height="67.5"/>
-                                                <state key="normal" title="ibooks://" image="ibooks">
+                                                <state key="normal" title="Stage1st://" image="ibooks">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
