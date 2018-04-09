@@ -90,6 +90,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var currentViewController: ViewController? = {
         return (self.window?.rootViewController as! UINavigationController).visibleViewController as? ViewController
     }()
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+            print("cer 33new dfdf")
+        return application(app,
+                                                                     open: url,
+                                                                     sourceApplication: options[.sourceApplication] as! String,
+                                                                     annotation: options[.annotation])
+    }
     
     func application(_ application: UIApplication,
                      open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -105,12 +113,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             currentViewController?.startTimer()
 //        case "todayctl://music":
 //            playMusic()
-            
+
         default:
             break
         }
-        
-        
+//
+
         
 //                        AppDelegate.autoStartFlag = true
                         return true
