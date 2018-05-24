@@ -88,7 +88,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
       
 
         originBright = UIScreen.main.brightness
-        UIScreen.main.brightness = 0.1
+//        UIScreen.main.brightness = 0.1
 
     }
     
@@ -204,7 +204,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         if originVol != nil {
             setVolumn(originVol!)
         }
-        UIScreen.main.brightness = originBright!
+//        UIScreen.main.brightness = originBright!
         soundPlayer?.stop()
         soundPlayer = nil
         reset()
