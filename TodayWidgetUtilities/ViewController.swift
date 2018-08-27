@@ -43,10 +43,19 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         print("ctl 1viewdidload \(AppDelegate.autoStartFlag)")
          isMusicOn =  UserDefaults.standard.bool(forKey:  "isMusicModeOn")
         modeSegment.selectedSegmentIndex = isMusicOn ? 0 : 1
-        originBright = UIScreen.main.brightness
+//        originBright = UIScreen.main.brightness
         print("isMusic  to \(isMusicOn)")
+
+         NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeAlive), name: .UIApplicationDidBecomeActive, object: nil)
     }
-    
+
+    // my selector that was defined above
+    @objc func appDidBecomeAlive() {
+        originBright = UIScreen.main.brightness
+        print("appDidBecomeAlive...\(originBright)")
+        UIScreen.main.brightness = 0.1
+    }
+
 
 
     @IBAction func switchSegmentChanged(_ sender: UISegmentedControl) {
@@ -87,7 +96,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
       
 
-        originBright = UIScreen.main.brightness
+//        originBright = UIScreen.main.brightness
 //        UIScreen.main.brightness = 0.1
 
     }
@@ -204,7 +213,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         if originVol != nil {
             setVolumn(originVol!)
         }
-//        UIScreen.main.brightness = originBright!
+        UIScreen.main.brightness = originBright!
         soundPlayer?.stop()
         soundPlayer = nil
         reset()
