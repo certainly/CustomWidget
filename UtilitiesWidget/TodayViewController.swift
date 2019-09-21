@@ -146,7 +146,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     private func playMyList(_ sender: UIButton) {
-        let player =  MPMusicPlayerController.systemMusicPlayer()
+        let player =  MPMusicPlayerController.systemMusicPlayer
         if let _ = player.nowPlayingItem {
             player.stop()
             sender.setImage(#imageLiteral(resourceName: "applemusic"), for: .normal)

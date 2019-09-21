@@ -16,7 +16,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var modeSegment: UISegmentedControl!
     
 
-    let counterInital = 20 * 60
+    let counterInital =  20 * 60
     let VOLUME:Float = 0.5
 //    let counterInital = 4 //5 * 60
     var counter = 0
@@ -46,7 +46,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 //        originBright = UIScreen.main.brightness
         print("isMusic  to \(isMusicOn)")
 
-         NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeAlive), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeAlive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
 
     // my selector that was defined above
@@ -101,16 +101,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     }
     
-    func timerAction() {
+    @objc func timerAction() {
         counter -= 1
         let formattedTimeLeft = formatter.string(from: TimeInterval(counter))
-        timeText.setTitle("\(formattedTimeLeft ?? "blank")", for: UIControlState.normal)
+        timeText.setTitle("\(formattedTimeLeft ?? "blank")", for: UIControl.State.normal)
 //        print("ctl counter -- \(counter)")
         if counter <= 0 {
             //            counter = -1
             reset()
             counter = -1
-            timeText.setTitle("finished", for: UIControlState.normal)
+            timeText.setTitle("finished", for: UIControl.State.normal)
 
             if(isMusicOn) {
                 prepareSound()
@@ -132,7 +132,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    func vibrate() {
+    @objc func vibrate() {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
@@ -144,7 +144,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         let formattedTimeLeft = formatter.string(from: TimeInterval(counter)) ?? "blank"
         if let _ = timeText {
 
-            timeText.setTitle(formattedTimeLeft, for: UIControlState.normal)
+            timeText.setTitle(formattedTimeLeft, for: UIControl.State.normal)
         }
     }
     
@@ -157,7 +157,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
             soundPlayer?.delegate = self
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             //            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
             //            MPMusicPlayerController.applicationMusicPlayer()
             soundPlayer?.prepareToPlay()
@@ -213,7 +213,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         if originVol != nil {
             setVolumn(originVol!)
         }
-        UIScreen.main.brightness = originBright!
+        UIScreen.main.brightness = originBright ?? 10
         soundPlayer?.stop()
         soundPlayer = nil
         reset()
@@ -221,8 +221,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     private func log(_ msg: String) {
-        let alert = UIAlertController(title: "Alert", message: "Message \(msg))", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "Alert", message: "Message \(msg))", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     private func test() {
