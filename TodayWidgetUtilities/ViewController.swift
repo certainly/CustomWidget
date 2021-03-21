@@ -15,8 +15,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var modeSegment: UISegmentedControl!
     
+    @IBOutlet weak var myTextField: UITextField!
 
-    let counterInital =  20 * 60
+    var counterInital =  30 * 60
     let VOLUME:Float = 0.5
 //    let counterInital = 4 //5 * 60
     var counter = 0
@@ -66,9 +67,32 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
 
     @IBAction func settingBtnTapped(_ sender: Any) {
-          performSegue(withIdentifier: "TimerSettingSegue", sender: nil)
+//          performSegue(withIdentifier: "TimerSettingSegue", sender: nil)
+        showTimePicker()
     }
-    
+
+    func showTimePicker() {
+        self.askDate(title: "Date of Birth") { (timeInterval) in
+//            let rz = timeInterval / 60
+            self.counterInital = Int(timeInterval ?? 0)
+            self.reset()
+//            print(timeInterval)
+        }
+
+    }
+
+    func askDate(title: String, delegate: @escaping (_ date: TimeInterval?) -> Void) {
+            _ = DatePickerPopup.createAndShow(in: self, title: title, delegate: delegate)
+        }
+
+    @objc func tapDone() {
+            if let datePicker = self.myTextField.inputView as? UIDatePicker { // 2-1
+                let dateformatter = DateFormatter() // 2-2
+                dateformatter.dateStyle = .medium // 2-3
+                self.myTextField.text = dateformatter.string(from: datePicker.date) //2-4
+            }
+            self.myTextField.resignFirstResponder() // 2-5
+        }
 
     
     override func didReceiveMemoryWarning() {
