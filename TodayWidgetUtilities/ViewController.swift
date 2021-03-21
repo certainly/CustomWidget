@@ -17,7 +17,21 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var myTextField: UITextField!
 
-    var counterInital =  30 * 60
+    public static let KEY_COUNTERINITIAL = "KEYCOUNTER"
+
+//    var counterInital =  UserDefaults.standard.integer(forKey: "KEY_COUNTERINITIAL")
+    var counterInitial: Int {
+        get {
+           var a = UserDefaults.standard.integer(forKey: ViewController.KEY_COUNTERINITIAL)
+            if a == 0 {
+                a =  30 * 60
+            }
+            return a
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: ViewController.KEY_COUNTERINITIAL)
+        }
+    }
     let VOLUME:Float = 0.5
 //    let counterInital = 4 //5 * 60
     var counter = 0
@@ -36,6 +50,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("cont: \(counterInitial)")
         let rect = CGRect(x: 20, y: view.frame.size.height  / 2, width: 280, height: 30)
         volumeView = MPVolumeView(frame: rect)
         
@@ -74,7 +89,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     func showTimePicker() {
         self.askDate(title: "Date of Birth") { (timeInterval) in
 //            let rz = timeInterval / 60
-            self.counterInital = Int(timeInterval ?? 0)
+            self.counterInitial = Int(timeInterval ?? 0)
+//            UserDefaults.standard.setValue(self.counterInital, forKey: ViewController.KEY_COUNTERINITIAL)
             self.reset()
 //            print(timeInterval)
         }
@@ -105,7 +121,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
            goHome()
         } else if counter == -1 {
             reset()
-        } else  if counter != 0  &&  counter != counterInital {
+        } else  if counter != 0  &&  counter != counterInitial {
             reset()
         } else {
             startTimer()
@@ -149,7 +165,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
            
             //            timer2.invalidate()
         }
-        if counter == (counterInital - 1) {
+        if counter == (counterInitial - 1) {
             setVolumn(VOLUME)
         } else {
 //            print("counter = \(counter)")
@@ -163,7 +179,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     func reset() {
         timer.invalidate()
         soundPlayer?.stop()
-        counter = counterInital
+        counter = counterInitial
 //        let formattedTimeLeft = "28:00"
         let formattedTimeLeft = formatter.string(from: TimeInterval(counter)) ?? "blank"
         if let _ = timeText {
