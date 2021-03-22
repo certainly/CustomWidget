@@ -18,6 +18,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var myTextField: UITextField!
 
     public static let KEY_COUNTERINITIAL = "KEYCOUNTER"
+    public  let KEY_MUSICON = "KEYMUSICON"
 
 //    var counterInital =  UserDefaults.standard.integer(forKey: "KEY_COUNTERINITIAL")
     var counterInitial: Int {
@@ -40,7 +41,15 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var volumeView: UIView?
     var originVol: Float?
     var originBright: CGFloat?
-    var isMusicOn = false
+//    var isMusicOn = false
+    var isMusicOn: Bool {
+        get {
+            UserDefaults.standard.bool(forKey: KEY_MUSICON)
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: KEY_MUSICON)
+        }
+    }
     
     lazy var formatter: DateComponentsFormatter = {
         let fmt = DateComponentsFormatter()
@@ -57,7 +66,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         view.addSubview(volumeView!)
         UIApplication.shared.isIdleTimerDisabled = true
         print("ctl 1viewdidload \(AppDelegate.autoStartFlag)")
-         isMusicOn =  UserDefaults.standard.bool(forKey:  "isMusicModeOn")
+//         isMusicOn =  UserDefaults.standard.bool(forKey:  "isMusicModeOn")
         modeSegment.selectedSegmentIndex = isMusicOn ? 0 : 1
 //        originBright = UIScreen.main.brightness
         print("isMusic  to \(isMusicOn)")
@@ -77,7 +86,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func switchSegmentChanged(_ sender: UISegmentedControl) {
         isMusicOn = sender.selectedSegmentIndex == 0 ? true : false
         print("isMusic on changed to \(isMusicOn)")
-        UserDefaults.standard.set(isMusicOn, forKey: "isMusicModeOn")
+//        UserDefaults.standard.set(isMusicOn, forKey: "isMusicModeOn")
     }
     
 
